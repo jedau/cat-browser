@@ -1,4 +1,6 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
+import CatCardService from '../CatCardService';
+import { Clawntext } from '../Pawvider';
 
 import './styles.css';
 
@@ -6,7 +8,13 @@ class CatCardContainer extends Component {
 
   render() {
     return (
-        <div>CatCardContainer</div>
+      <Clawntext.Consumer>
+        {
+          (context) => (
+            <CatCardService breed={context?.state.selectedBreed} />
+          )
+        }
+      </Clawntext.Consumer>
     );
   }
 }

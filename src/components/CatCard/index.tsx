@@ -1,12 +1,16 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 
 import './styles.css';
 
-class CatCard extends Component {
+type CatCardProps = {
+  catID: string
+  imageURL: string
+}
 
+class CatCard extends Component<CatCardProps> {
   render() {
     return (
-        <div>CatCard</div>
+      <img className="img" alt="" key={this.props.catID} src={this.props.imageURL} />
     );
   }
 }
