@@ -1,0 +1,10 @@
+.container {
+  padding: 20px 0;
+}
+
+.single-cat-container {
+  width: 100%;
+  max-width: 960px;
+  margin-right: auto;
+  margin-left: auto;
+}

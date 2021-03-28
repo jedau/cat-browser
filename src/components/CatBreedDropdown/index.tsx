@@ -6,6 +6,7 @@ import './styles.css';
 
 class CatBreedDropdown extends Component {
   static contextType = Clawntext;
+  selectElement: any;
 
   state = {
     breeds: [],
@@ -41,14 +42,28 @@ class CatBreedDropdown extends Component {
 
   componentDidMount() {
     this.getBreeds();
+    let search = window.location.search;
+    let params = new URLSearchParams(search);
+    let defaultBreed = params.get('breed');
+    if (defaultBreed != null) {
+      this.setState({
+        selectedBreed: defaultBreed
+      });
+      this.context.setBreed(defaultBreed);
+    }
   }
 
   render() {
     return (
-      <select onChange={this.selectBreed} value={this.state.selectedBreed}>
-        <option value="0">Select breed</option>
-        { this.state.breeds === undefined ? '' : this.state.breeds.map((breed: any) => <option key={breed.id} value={breed.id}>{breed.name}</option>)}
-      </select>
+      <div className="row">
+        <div className="form-group">
+          <label className="form-label">Breed</label>
+          <select id="breedDropdown" className="form-control" ref={select => this.selectElement = select} onChange={this.selectBreed} value={this.state.selectedBreed}>
+            <option value="0">Select breed</option>
+            {this.state.breeds === undefined ? '' : this.state.breeds.map((breed: any) => <option key={breed.id} value={breed.id}>{breed.name}</option>)}
+          </select>
+        </div>
+      </div>
     );
   }
 }

@@ -1,4 +1,6 @@
 import { Component } from 'react';
+import CatCardImage from '../CatCardImage';
+import ViewDetailsButton from '../ViewDetailsButton';
 
 import './styles.css';
 
@@ -10,7 +12,10 @@ type CatCardProps = {
 class CatCard extends Component<CatCardProps> {
   render() {
     return (
-      <img className="img" alt="" key={this.props.catID} src={this.props.imageURL} />
+      <div>
+        <CatCardImage key={this.props.catID} catID={this.props.catID} imageURL={this.props.imageURL} />
+        <ViewDetailsButton catID={this.props.catID} />
+      </div>
     );
   }
 }
