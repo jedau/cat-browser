@@ -4,12 +4,12 @@ import ViewDetailsButton from '../ViewDetailsButton';
 
 import './styles.css';
 
-type CatCardProps = {
+interface ICatCard {
   catID: string
   imageURL: string
 }
 
-class CatCard extends Component<CatCardProps> {
+class CatCard extends Component<ICatCard> {
   render() {
     return (
       <div>

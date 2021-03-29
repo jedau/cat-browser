@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 import axios from 'axios';
 import CatCardImage from '../../components/CatCardImage';
+import SingleCatDetails from '../../components/SingleCatDetails';
 
 import './styles.css';
-import SingleCatDetails from '../../components/SingleCatDetails';
 
 interface SingleCatProps {
   match: any

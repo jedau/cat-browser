@@ -6,7 +6,6 @@ import './styles.css';
 
 class CatBreedDropdown extends Component {
   static contextType = Clawntext;
-  selectElement: any;
 
   state = {
     breeds: [],
@@ -58,7 +57,7 @@ class CatBreedDropdown extends Component {
       <div className="row">
         <div className="form-group">
           <label className="form-label">Breed</label>
-          <select id="breedDropdown" className="form-control" ref={select => this.selectElement = select} onChange={this.selectBreed} value={this.state.selectedBreed}>
+          <select id="breedDropdown" className="form-control" onChange={this.selectBreed} value={this.state.selectedBreed}>
             <option value="0">Select breed</option>
             {this.state.breeds === undefined ? '' : this.state.breeds.map((breed: any) => <option key={breed.id} value={breed.id}>{breed.name}</option>)}
           </select>

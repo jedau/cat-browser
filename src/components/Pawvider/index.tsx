@@ -2,7 +2,8 @@ import { Component, createContext } from 'react';
 
 interface ClawntextInterface {
   state: any,
-  setBreed: any
+  setBreed: any,
+  setLoading: any
 }
 
 export const Clawntext = createContext<ClawntextInterface | null>(null);
@@ -10,7 +11,8 @@ export const Clawntext = createContext<ClawntextInterface | null>(null);
 // The CatProvider component ;)
 class Pawvider extends Component {
   state = {
-    selectedBreed: ''
+    selectedBreed: '',
+    loading: true
   }
 
   render() {
@@ -20,6 +22,9 @@ class Pawvider extends Component {
           state: this.state,
           setBreed: (breed: string) => this.setState({
             selectedBreed: breed
+          }),
+          setLoading: (loading: boolean) => this.setState({
+            loading: loading
           })
         }
       }>

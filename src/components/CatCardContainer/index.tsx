@@ -1,14 +1,17 @@
 import { Component } from 'react';
 import axios from 'axios';
 import CatCard from '../CatCard';
+import { Clawntext } from '../Pawvider';
 
 import './styles.css';
 
-type CatCardContainerProps = {
+interface ICatCardContainer {
   breed: string
 }
 
-class CatCardContainer extends Component<CatCardContainerProps> {
+class CatCardContainer extends Component<ICatCardContainer> {
+  static contextType = Clawntext;
+
   state = {
     data: []
   }
@@ -20,6 +23,7 @@ class CatCardContainer extends Component<CatCardContainerProps> {
         this.setState({
           data: response.data
         });
+        this.context.setLoading(false);
       })
       .catch(error => {
         if (error.response) {
