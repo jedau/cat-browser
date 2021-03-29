@@ -6,7 +6,8 @@ import SingleCatDetails from '../../components/SingleCatDetails';
 import './styles.css';
 
 interface SingleCatProps {
-  match: any
+  match: any,
+  history: any
 }
 
 class SingleCatPage extends Component<SingleCatProps> {
@@ -38,6 +39,7 @@ class SingleCatPage extends Component<SingleCatProps> {
       .catch(error => {
         if (error.response) {
           alert("Apologies but we could not load new cats for you at this time! Miau!");
+          this.props.history.push('/');
         }
       });
   }
