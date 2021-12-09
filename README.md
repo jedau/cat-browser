@@ -2,7 +2,7 @@
 
 A simple cat browser to demonstrate different ReactJS techniques and features. This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and uses [The Cat API](https://docs.thecatapi.com/) to get the information that's displayed. Using `axios`, `react-router-dom`, React's Context API and other libraries, this weekend project was meant to shake off two year's worth of React rust.
 
-I'm new to Typescript, and this was the first time I had the chance to use React + Typescript, so it was a bit unnerving. Apologies if I didn't follow some best practices. Let me know if you have additional suggestions. I would love to lear an improve!
+I'm new to Typescript, and this was the first time I had the chance to use React + Typescript, so it was a bit unnerving. Apologies if I didn't follow some best practices. Let me know if you have additional suggestions. I would love to learn and improve!
 
 ## Available Scripts
 
